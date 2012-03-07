@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}Songs{% endblock %}</title>
+    </head>
+    <body>
+        {% block content %}
+        <ul>
+            {% for object in object_list %}
+            <li><a href="{{ object.slug }}">{{ object.title }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endblock %}
+    </body>
+</html>
