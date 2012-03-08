@@ -5,7 +5,7 @@
     </head>
     <body>
         {% block content %}
-        <h1>{{ song.title }} ({{ key|default:song.original_key }})</h1>
+        <h1>{{ song.title }} ({{ key }})</h1>
         <pre>{{ chords }}</h1>
         {% endblock %}
     </body>

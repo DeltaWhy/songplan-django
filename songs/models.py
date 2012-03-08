@@ -9,11 +9,10 @@ class Song(models.Model):
     copyright = models.CharField(max_length=500, blank=True)
     ccli_number = models.CharField(max_length=50, blank=True)
     original_key = models.CharField(max_length=2, choices=
-            (('Ab','Ab'),('A','A'),('A#','A#'),('Bb','Bb'),
-                ('B','B'),('C','C'),('C#','C#'),('Db','Db'),
-                ('D','D'),('D#','D#'),('Eb','Eb'),('E','E'),
-                ('F','F'),('F#','F#'),('Gb','Gb'),('G','G'),
-                ('G#','G#')))
+            (('Ab','Ab'),('A','A'),('Bb','Bb'),
+                ('B','B'),('C','C'),('Db','Db'),
+                ('D','D'),('Eb','Eb'),('E','E'),
+                ('F','F'),('F#','F#'),('Gb','Gb'),('G','G')))
     chords = models.TextField()
     tags = models.CharField(max_length=200, blank=True)
     notes = models.TextField(blank=True)
