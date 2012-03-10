@@ -13,10 +13,10 @@ def transpose(original_key, key, chords):
     transpose_factor = note_numbers[key] - note_numbers[original_key]
     new_chords = ""
     for line in chords.split('\n'):
-        if not(re.search(r'^[\s]*([A-G][\w#+-]*[\s]*)*$', line)):
+        if not(re.search(r'^[\s]*([A-G][\w#+-/]*[\s]*)*$', line)):
             new_chords += line + '\n'
             continue
-        line = re.sub('(^|[\s])([A-G][#b]?)', 
+        line = re.sub('(^|[\s]|/|-)([A-G][#b]?)', 
             lambda x: x.group(1) + number_notes[(note_numbers[x.group(2)]+transpose_factor)%12],
             line)
         new_chords += line + '\n'

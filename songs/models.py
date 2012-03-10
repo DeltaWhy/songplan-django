@@ -14,6 +14,8 @@ class Song(models.Model):
                 ('D','D'),('Eb','Eb'),('E','E'),
                 ('F','F'),('F#','F#'),('Gb','Gb'),('G','G')))
     chords = models.TextField()
+    default_order = models.CharField(max_length=100, blank=True)
+    two_columns = models.BooleanField()
     tags = models.CharField(max_length=200, blank=True)
     notes = models.TextField(blank=True)
 
