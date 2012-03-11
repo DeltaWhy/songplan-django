@@ -17,4 +17,8 @@ urlpatterns = patterns('',
     url(r'^$', 'django.views.generic.simple.redirect_to', {'url': '/songs/'}),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^songs/', include('songplan.songs.urls')),
+    url(r'^openid/', include('django_openid_auth.urls')),
 )
+
+LOGIN_URL = '/openid/login/'
+LOGIN_REDIRECT_URL = '/'
