@@ -25,6 +25,6 @@ def transpose(original_key, key, chords):
 def headerlines(chords):
     lines = []
     for i in range(len(chords.splitlines())):
-        if re.search(r'(?i)^[\s(\[]*(intro|tag|ending|chorus|verse|bridge|pre[-]?chorus)[\s]*[\d]*[\w)\]:]*(\(.*\))?[\s]*$', chords.splitlines()[i]):
+        if re.search(r'(?i)^[\s(\[]*(intro|tag|ending|chorus|verse|bridge|pre[-]?chorus)[\s]*[\d]*[)\]:]*[\s]*(\(.*\))?[\s]*$', chords.splitlines()[i]):
             lines.append(i)
     return lines
