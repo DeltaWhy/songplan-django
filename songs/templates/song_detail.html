@@ -2,20 +2,27 @@
 <html>
     <head>
         <title>{% block title %}Songs{% endblock %}</title>
-        {% if song.two_columns %}
         <style type="text/css">
-            pre {
+            .chords {
+                font-family: monospace;
+                font-size: 12pt;
+                white-space: pre-wrap;
+                {% if song.two_columns %}
                 -moz-column-count: 2;
                 -webkit-column-count: 2;
                 column-count: 2;
+                {% endif %}
+            }
+            .header {
+                font-weight: bold;
             }
         </style>
-        {% endif %}
     </head>
     <body>
         {% block content %}
         <h1>{{ song.title }} ({{ key }})</h1>
-        <pre>{{ chords }}</h1>
+        <div class="chords">{% for line in chords.splitlines %}{% if forloop.counter0 in headerlines %}<span class="header">{{line}}</span>{% else %}{{line}}{% endif %}
+{% endfor %}</div>
         {% endblock %}
     </body>
 </html>

@@ -12,7 +12,7 @@ def transpose(original_key, key, chords):
             6:'D', 7:'Eb', 8:'E', 9:'F', 10:'Gb', 11:'G'}
     transpose_factor = note_numbers[key] - note_numbers[original_key]
     new_chords = ""
-    for line in chords.split('\n'):
+    for line in chords.splitlines():
         if not(re.search(r'^[\s]*([A-G][\w#+-/]*[\s]*)*$', line)):
             new_chords += line + '\n'
             continue
@@ -21,3 +21,10 @@ def transpose(original_key, key, chords):
             line)
         new_chords += line + '\n'
     return new_chords
+
+def headerlines(chords):
+    lines = []
+    for i in range(len(chords.splitlines())):
+        if re.search(r'(?i)^[\s(\[]*(intro|tag|chorus|verse|bridge|pre[-]?chorus)[\s]*[\d]*[\w)\]:]*$', chords.splitlines()[i]):
+            lines.append(i)
+    return lines

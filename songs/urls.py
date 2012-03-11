@@ -2,7 +2,7 @@ from django.conf.urls.defaults import patterns, include, url
 from songplan.songs.models import Song
 
 info_dict = {
-    'queryset': Song.objects.all(),
+    'queryset': Song.objects.order_by('title').all(),
 }
 
 urlpatterns = patterns('',

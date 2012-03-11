@@ -10,6 +10,8 @@ def detail(request, slug, key):
         key = song.original_key
     else:
         chords = helpers.transpose(song.original_key, key, song.chords)
+    headerlines = helpers.headerlines(chords)
     return render_to_response('song_detail.html', 
-            {'song': song, 'key': key, 'chords': chords})
+            {'song': song, 'key': key, 'chords': chords, 
+                'headerlines': headerlines})
 
