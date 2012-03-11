@@ -1,4 +1,0 @@
-{% block content %}
-{{ object.title }}
-{{ object.chords }}
-{% endblock %}
