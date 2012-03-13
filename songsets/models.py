@@ -16,5 +16,8 @@ class SetItem(models.Model):
     songSet = models.ForeignKey(SongSet)
     index = models.IntegerField();
 
+    class Meta:
+        ordering = ['songSet', 'index']
+
     def __unicode__(self):
         return self.song.__unicode__()

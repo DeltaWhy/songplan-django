@@ -3,6 +3,7 @@ from django.contrib import admin
 
 class ItemInline(admin.TabularInline):
     model = SetItem
+    extra = 6
 
 class SetAdmin(admin.ModelAdmin):
     date_hierarchy = 'date'
