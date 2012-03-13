@@ -19,8 +19,12 @@ class Song(models.Model):
     tags = models.CharField(max_length=200, blank=True)
     notes = models.TextField(blank=True)
 
-    class SongAdmin(admin.ModelAdmin):
-        prepopulated_fields = {"slug": ("title",)}
+    class Meta:
+        ordering = ["title"]
+
+    @models.permalink
+    def get_absolute_url(self):
+        return ('song_view', [self.slug])
 
     def __unicode__(self):
         return self.title

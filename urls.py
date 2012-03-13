@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import patterns, include, url
-from songplan import songs
+from songplan import songs, songsets
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -17,6 +17,7 @@ urlpatterns = patterns('',
     url(r'^$', 'django.views.generic.simple.redirect_to', {'url': '/songs/'}),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^songs/', include('songplan.songs.urls')),
+    url(r'^sets/', include('songplan.songsets.urls')),
     url(r'^openid/', include('django_openid_auth.urls')),
 )
 
