@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}Sets{% endblock %}</title>
+    </head>
+    <body>
+        {% block content %}
+        <h1>{{ object.title }}</h1>
+        <h3>{{ object.date }}</h3>
+        <ul>
+            {% for item in object.setitem_set.all %}
+            <li><a href="{{ item.song.get_absolute_url }}">{{ item.song.title }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endblock %}
+    </body>
+</html>

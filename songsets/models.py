@@ -8,6 +8,13 @@ class SongSet(models.Model):
     date = models.DateTimeField()
     songs = models.ManyToManyField(Song, through="SetItem")
 
+    class Meta:
+        ordering = ["date","title"]
+
+    @models.permalink
+    def get_absolute_url(self):
+        return ('set_detail', [self.id])
+
     def __unicode__(self):
         return self.title
 
