@@ -61,5 +61,8 @@ def splitlyrics(chords):
             currentStanza = ""
         else:
             currentStanza += lines[i] + "\n"
+    if currentTitle != "" and currentStanza != "":
+        result[currentTitle] = currentStanza
+        knownStanzas.append(currentTitle)
 
     return result
