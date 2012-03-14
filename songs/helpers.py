@@ -16,6 +16,9 @@ def transpose(original_key, key, chords):
         if not(re.search(r'^[\s]*([A-G][\w#+-/]*[\s]*)*$', line)):
             new_chords += line + '\n'
             continue
+        if re.search(r'(?i)(chorus|bridge|because|forever)', line):
+            new_chords += line + '\n'
+            continue
         line = re.sub('(^|[\s]|/|-)([A-G][#b]?)', 
             lambda x: x.group(1) + number_notes[(note_numbers[x.group(2)]+transpose_factor)%12],
             line)
@@ -28,3 +31,35 @@ def headerlines(chords):
         if re.search(r'(?i)^[\s(\[]*(intro|tag|ending|chorus|verse|bridge|pre[-]?chorus)[\s]*[\d]*[)\]:]*[\s]*(\(.*\))?[\s]*$', chords.splitlines()[i]):
             lines.append(i)
     return lines
+
+def lyrics(chords):
+    lyrics = ""
+    for line in chords.splitlines():
+        if not(re.search(r'^[\s]*([A-G][\w#+-/]*[\s]*)*$', line)):
+            lyrics += line.strip() + '\n'
+            continue
+        if re.search(r'(?i)(chorus|bridge|because|forever)', line):
+            lyrics += line.strip() + '\n'
+            continue
+    return lyrics
+
+def splitlyrics(chords):
+    strLyrics = lyrics(chords)
+    arrHeaderlines = headerlines(strLyrics)
+    lines = strLyrics.splitlines()
+    knownStanzas = []
+    result = {}
+    currentTitle = ""
+    currentStanza = ""
+
+    for i in range(len(lines)):
+        if i in arrHeaderlines:
+            if currentTitle != "" and currentStanza != "":
+                result[currentTitle] = currentStanza
+                knownStanzas.append(currentTitle)
+            currentTitle = re.search(r'(?i)(intro|tag|ending|chorus|verse|bridge|pre[-]?chorus)[\s]*[\d]*', lines[i]).group(0).capitalize()
+            currentStanza = ""
+        else:
+            currentStanza += lines[i] + "\n"
+
+    return result
