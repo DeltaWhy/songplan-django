@@ -11,4 +11,4 @@ class SetAdmin(admin.ModelAdmin):
     inlines = [ItemInline]
 
 admin.site.register(SongSet, SetAdmin)
-admin.site.register(SetItem)
+#admin.site.register(SetItem)

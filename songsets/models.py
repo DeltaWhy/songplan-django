@@ -22,6 +22,12 @@ class SetItem(models.Model):
     song = models.ForeignKey(Song)
     songSet = models.ForeignKey(SongSet)
     index = models.IntegerField();
+    key = models.CharField(max_length=2, choices=
+            (('Ab','Ab'),('A','A'),('Bb','Bb'),
+                ('B','B'),('C','C'),('Db','Db'),
+                ('D','D'),('Eb','Eb'),('E','E'),
+                ('F','F'),('F#','F#'),('Gb','Gb'),('G','G')))
+    order = models.CharField(max_length=100, blank=True)
 
     class Meta:
         ordering = ['songSet', 'index']

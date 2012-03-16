@@ -6,6 +6,7 @@ class Song(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField()
     author = models.CharField(max_length=100)
+    short_author = models.CharField(max_length=100, blank=True)
     copyright = models.CharField(max_length=500, blank=True)
     ccli_number = models.CharField(max_length=50, blank=True)
     original_key = models.CharField(max_length=2, choices=

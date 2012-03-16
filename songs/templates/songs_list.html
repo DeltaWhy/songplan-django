@@ -1,15 +1,18 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>{% block title %}Songs{% endblock %}</title>
-    </head>
-    <body>
+{% extends 'songs_base.html' %}
+        {% block title %}Songs{% endblock %}
         {% block content %}
-        <ul>
-            {% for object in object_list %}
-            <li><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></li>
-            {% endfor %}
-        </ul>
+        <table class="details">
+            <tbody>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                </tr>
+                {% for object in object_list %}
+                <tr>
+                    <td><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></td>
+                    <td>{% firstof object.short_author object.author %}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
         {% endblock %}
-    </body>
-</html>

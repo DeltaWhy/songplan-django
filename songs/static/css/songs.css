@@ -1,0 +1,16 @@
+.chords {
+    font-family: monospace;
+    font-size: 12pt;
+    white-space: pre-wrap;
+}
+.header {
+    font-weight: bold;
+}
+table.details { width: 75%; border-collapse: collapse; margin-bottom: 1em; }
+table.details tr { background-color: #ccc; outline-top: 1px solid #eee; }
+table.details th { background-color: #aaa; padding: 4px; }
+table.details th a { color: #000; text-decoration: none; }
+table.details th a:hover { text-decoration: underline; }
+table.details td, th { padding: 4px; border: 1px solid #aaa; }
+table.details a.create, table.details a.delete { font-size: smaller; }
+table.details .buttons { text-align: right; }
