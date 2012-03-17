@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}SongPlan{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/songplan.css" />
+        {% block head %}
+        {% endblock %}
+    </head>
+    <body id="home">
+        {% block content %}
+        <div id="wrapper">
+        <div id="container">
+            <h1>SongPlan</h1>
+            <a class="button large lblue" href="/songs">Songs</a>
+            <a class="button large lblue" href="/sets">Sets</a>
+        </div>
+        </div>
+        <div id="footer">
+            <a href="/admin">Admin login</a>
+        </div>
+        {% endblock %}
+    </body>
+</html>

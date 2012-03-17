@@ -1,0 +1,87 @@
+* { margin: 0; padding: 0; }
+#container { margin: 0 auto; text-align: center; }
+#container h1 { padding: 50px 0; }
+#container .button { margin-right: 20px; }
+html, body, #wrapper { height: 100%; }
+body > #wrapper { height: auto; min-height: 100%; }
+body { background: #ddd; }
+#footer { 
+    border-top: 1px solid #aaa; 
+    background: #ccc; 
+	position: relative; 
+	margin-top: -31px; 
+	height: 30px; 
+	line-height: 30px; 
+	padding: 0 0.5em 0 0.5em; 
+    text-align: right;
+}
+.button {
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: 14px/100% Arial, Helvetica, sans-serif;
+	padding: .5em 2em .55em;
+	text-shadow: 0 1px 1px #fff;
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.button.small {
+	font: 10px/100%;
+	padding: .3em 1.3em .45em;
+}
+.button.large { font-size: 24px; }
+.button:hover {
+	text-decoration: none;
+}
+.button:active {
+	position: relative;
+	top: 1px;
+}
+.lblue {
+	color: #000;
+	border: solid 1px #28c;
+	background: #8bc;
+	background: -webkit-gradient(linear, left top, left bottom, from(#8fbfcf), to(#80b0c0));
+}
+.lblue:hover {
+	background: #7ab;
+	background: -webkit-gradient(linear, left top, left bottom, from(#7fafbf), to(#70a0b0));
+}
+.lblue:active {
+	color: #fff;
+	background: -webkit-gradient(linear, left top, left bottom, from(#80b0c0), to(#8fbfcf));
+}
+.lred {
+	color: #000;
+	border: solid 1px #c22;
+	background: #c46;
+	background: -webkit-gradient(linear, left top, left bottom, from(#cf4f6f), to(#c04060));
+}
+.lred:hover {
+	background: #b35;
+	background: -webkit-gradient(linear, left top, left bottom, from(#bf3f5f), to(#b03050));
+}
+.lred:active {
+	color: #fff;
+	background: -webkit-gradient(linear, left top, left bottom, from(#c04060), to(#cf4f6f));
+}
+.gray {
+	color: #000;
+	border: solid 1px #777;
+	background: #ccc;
+	background: -webkit-gradient(linear, left top, left bottom, from(#cfcfcf), to(#c0c0c0));
+}
+.gray:hover {
+	background: #bbb;
+	background: -webkit-gradient(linear, left top, left bottom, from(#bfbfbf), to(#b0b0b0));
+}
+.gray:active {
+	color: #fff;
+	background: -webkit-gradient(linear, left top, left bottom, from(#c0c0c0), to(#cfcfcf));
+}
