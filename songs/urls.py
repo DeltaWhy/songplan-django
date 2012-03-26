@@ -11,5 +11,5 @@ urlpatterns = patterns('',
     url(r'^(?P<slug>[-\w]+)/$', 'songs.views.detail', {'key': ''}, name='song_view'),
     url(r'^(?P<slug>[-\w]+)/lyrics/$', 'songs.views.lyrics'),
     url(r'^(?P<slug>[-\w]+)/json/$', 'songs.views.detail_json'),
-    url(r'^(?P<slug>[-\w]+)/(?P<key>[A-G][+-]?)/$', 'songs.views.detail'),
+    url(r'^(?P<slug>[-\w]+)/(?P<key>[A-G][+-]?)/$', 'songs.views.detail', name='transpose_view'),
 )

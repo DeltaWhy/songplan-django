@@ -12,7 +12,7 @@
                 </tr>
                 {% for item in object.setitem_set.all %}
                 <tr>
-                    <td><a href="{{ item.song.get_absolute_url }}">{{ item.song.title }}</a></td>
+                    <td><a href="{% url transpose_view item.song.slug item.key %}">{{ item.song.title }}</a></td>
                     <td>{{ item.key }}</td>
                     <td>{% firstof item.song.short_author item.song.author %}</td>
                 </tr>
