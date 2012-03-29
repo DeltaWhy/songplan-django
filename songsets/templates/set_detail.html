@@ -1,4 +1,4 @@
-{% extends 'songs_list.html' %}
+{% extends 'songs_base.html' %}
         {% block title %}Sets{% endblock %}
         {% block content %}
         <h1>{{ object.title }}</h1>
@@ -19,4 +19,5 @@
                 {% endfor %}
             </tbody>
         </table>
+        <a class="button lblue" href="{% url set_music_view object.id %}">Print all chord charts</a>
         {% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'songs_base.html' %}
+{% block title %}Title{% endblock %}
+{% block head %}
+<style type="text/css">
+    hr {
+        page-break-after: always;
+        -moz-page-break-after: always;
+        -webkit-page-break-after: always;
+        border: none;
+        border-top: 1px dashed #000;
+    }
+    @media print {
+        hr { border: none; }
+    }
+</style>
+{% endblock %}
+{% block content %}
+{% for song in songs %}
+{% include 'song_fragment.html' with song=song.song chords=song.chords key=song.key headerlines=song.headerlines only %}
+{% if not forloop.last %}<hr />
+{% endif %}
+{% endfor %}
+{% endblock %}
