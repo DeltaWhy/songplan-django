@@ -1,5 +1,21 @@
 {% extends 'songs_base.html' %}
 {% block title %}{{ song.title }}{% endblock %}
 {% block content %}
+<div class="noprint">
+Key: 
+    <a href="{% url transpose_view song.slug 'A-' %}">Ab</a>
+    <a href="{% url transpose_view song.slug 'A' %}">A</a>
+    <a href="{% url transpose_view song.slug 'B-' %}">Bb</a>
+    <a href="{% url transpose_view song.slug 'B' %}">B</a>
+    <a href="{% url transpose_view song.slug 'C' %}">C</a>
+    <a href="{% url transpose_view song.slug 'D-' %}">Db</a>
+    <a href="{% url transpose_view song.slug 'D' %}">D</a>
+    <a href="{% url transpose_view song.slug 'E-' %}">Eb</a>
+    <a href="{% url transpose_view song.slug 'E' %}">E</a>
+    <a href="{% url transpose_view song.slug 'F' %}">F</a>
+    <a href="{% url transpose_view song.slug 'F+' %}">F#</a>
+    <a href="{% url transpose_view song.slug 'G-' %}">Gb</a>
+    <a href="{% url transpose_view song.slug 'G' %}">G</a>
+</div>
 {% include "song_fragment.html" %}
 {% endblock %}

@@ -1,4 +1,7 @@
 * { margin: 0; padding: 0; }
+@media print {
+    .noprint { display: none; }
+}
 #container { margin: 0 auto; text-align: center; }
 #container h1 { padding: 50px 0; }
 #container .button { margin-right: 20px; }

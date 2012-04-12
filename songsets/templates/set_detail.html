@@ -1,4 +1,5 @@
 {% extends 'songs_base.html' %}
+{% load song_tags %}
         {% block title %}Sets{% endblock %}
         {% block content %}
         <h1>{{ object.title }}</h1>
@@ -12,7 +13,7 @@
                 </tr>
                 {% for item in object.setitem_set.all %}
                 <tr>
-                    <td><a href="{% url transpose_view item.song.slug item.key %}">{{ item.song.title }}</a></td>
+                    <td><a href="{% url transpose_view item.song.slug item.key|keyslug %}">{{ item.song.title }}</a></td>
                     <td>{{ item.key }}</td>
                     <td>{% firstof item.song.short_author item.song.author %}</td>
                 </tr>

@@ -11,6 +11,9 @@
 .header {
     font-weight: bold;
 }
+@media print {
+    .noprint { display: none; }
+}
 table.details { width: 75%; border-collapse: collapse; margin-bottom: 1em; }
 table.details tr { background-color: #ccc; outline-top: 1px solid #eee; }
 table.details th { background-color: #aaa; padding: 4px; }
