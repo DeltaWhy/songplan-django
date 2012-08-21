@@ -3,11 +3,17 @@
     .noprint { display: none; }
 }
 #container { margin: 0 auto; text-align: center; }
-#container h1 { padding: 50px 0; }
+#container h1 {
+  margin: 50px auto;
+  width: 403px;
+  height: 200px;
+  background: url('/img/logo.png');
+  text-indent: -9999px;
+}
 #container .button { margin-right: 20px; }
 html, body, #wrapper { height: 100%; }
 body > #wrapper { height: auto; min-height: 100%; }
-body { background: #ddd; }
+body { background: #eee; }
 #footer { 
     border-top: 1px solid #aaa; 
     background: #ccc; 
@@ -27,12 +33,12 @@ body { background: #ddd; }
 	font: 14px/100% Arial, Helvetica, sans-serif;
 	padding: .5em 2em .55em;
 	text-shadow: 0 1px 1px #fff;
-	-webkit-border-radius: 4px; 
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 2px 3px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 2px 3px rgba(0,0,0,.2);
+	box-shadow: 0 2px 3px rgba(0,0,0,.2);
 }
 .button.small {
 	font: 10px/100%;
