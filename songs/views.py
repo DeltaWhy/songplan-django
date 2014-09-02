@@ -10,6 +10,8 @@ def detail(request, slug, key):
     if key == '':
         chords = song.chords
         key = song.original_key
+    elif key == 'nashville':
+        chords = helpers.nashville(song.original_key, song.chords)
     else:
         chords = helpers.transpose(song.original_key, key, song.chords)
     headerlines = helpers.headerlines(chords)

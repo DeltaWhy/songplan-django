@@ -16,6 +16,7 @@ Key:
     <a href="{% url transpose_view song.slug 'F+' %}">F#</a>
     <a href="{% url transpose_view song.slug 'G-' %}">Gb</a>
     <a href="{% url transpose_view song.slug 'G' %}">G</a>
+    <a href="{% url nashville_view song.slug %}">Nashville</a>
 </div>
 {% include "song_fragment.html" %}
 {% endblock %}

@@ -12,4 +12,5 @@ urlpatterns = patterns('',
     url(r'^(?P<slug>[-\w]+)/lyrics/$', 'songs.views.lyrics'),
     url(r'^(?P<slug>[-\w]+)/json/$', 'songs.views.detail_json'),
     url(r'^(?P<slug>[-\w]+)/(?P<key>[A-G][+-]?)/$', 'songs.views.detail', name='transpose_view'),
+    url(r'^(?P<slug>[-\w]+)/nashville/$', 'songs.views.detail', {'key': 'nashville'}, name='nashville_view'),
 )
